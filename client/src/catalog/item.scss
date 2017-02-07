@@ -1,0 +1,25 @@
+$colorLightest:#fff;
+$colorLighter:#eee;
+$colorLight:#ddd;
+$colorMid:#ccc;
+$colorDarkest:#222;
+$colorDarker:#333;
+$colorDark:#444;
+$colorHighlight:#ffa366;
+$colorHappy:#47d147;
+$colorWarning:#ff3333;
+$colorNotice:#ffff00;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.entry{
+
+    font-family:sans-serif;
+    font-size:0.85em;
+
+}

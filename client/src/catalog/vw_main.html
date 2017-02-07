@@ -1,0 +1,27 @@
+<div class="entry row" ng-repeat="item in items">
+
+    <div class="col-sm-6">
+
+        <div class="row lead padding-10">
+            {{item.title}}
+        </div>
+
+        <div rn-carousel class="image">
+            <div ng-repeat="img in item.images" class="layer">
+                <img src="{{img.image}}" alt="{{img.altText}}">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+
+        <div class="row lead padding-10">
+            {{item.price}} <span class="small">{{item.priceDesc}}</span>
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+</div>

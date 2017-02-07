@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Retail Suave</title>
+
+    <!-- vendor:css-->
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap-theme.css">
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app.css">
+    <!-- endinject -->
+
+    <!-- vendor:js-->
+    <script src="/vendor/jquery/dist/jquery.js"></script>
+    <script src="/vendor/angular/angular.js"></script>
+    <script src="/vendor/moment/moment.js"></script>
+    <script src="/vendor/angular-strap/dist/angular-strap.js"></script>
+    <script src="/vendor/angular-strap/dist/angular-strap.tpl.js"></script>
+    <script src="/vendor/angular-animate/angular-animate.js"></script>
+    <script src="/vendor/angular-route/angular-route.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="/app.js"></script>
+    <script src="/catalog/itemController.js"></script>
+    <script src="/catalog/itemService.js"></script>
+    <script src="/shared/commonUiDirective.js"></script>
+    <script src="/shared/errorService.js"></script>
+    <script src="/shared/loggerService.js"></script>
+    <script src="/shared/messageService.js"></script>
+    <script src="/shared/routes.js"></script>
+    <script src="/shared/securityConfig.js"></script>
+    <script src="/shared/urlService.js"></script>
+    <!-- endinject -->
+
+
+  </head>
+
+  <body ng-app="app">
+
+    <div class="container" ng-view></div>
+
+  </body>
+
+</html>

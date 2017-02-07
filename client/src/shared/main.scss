@@ -1,0 +1,51 @@
+$spaceamounts: (5, 10, 15, 20, 25, 30);
+
+@mixin generate-padding() {
+  @each $space in $spaceamounts {
+    .padding-#{$space} {
+      padding: #{$space}px;
+    }
+  }
+}
+
+@mixin generate-margin-top() {
+  @each $space in $spaceamounts {
+    .mtop-#{$space} {
+      margin-top: #{$space}px;
+    }
+  }
+}
+
+@mixin generate-margin-bottom() {
+  @each $space in $spaceamounts {
+    .mbottom-#{$space} {
+      margin-bottom: #{$space}px;
+    }
+  }
+}
+
+@mixin generate-margin-left() {
+  @each $space in $spaceamounts {
+    .mleft-#{$space} {
+      margin-left: #{$space}px;
+    }
+  }
+}
+
+@mixin generate-margin-right() {
+  @each $space in $spaceamounts {
+    .mright-#{$space} {
+      margin-right: #{$space}px;
+    }
+  }
+}
+
+
+body, html{ margin:0; }
+.clearfix{ clear: both; }
+
+@include generate-padding();
+@include generate-margin-left();
+@include generate-margin-right();
+@include generate-margin-top();
+@include generate-margin-bottom();
