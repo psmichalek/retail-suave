@@ -16,7 +16,8 @@
     "jasmine-core": "jasmine#^2.4.1",
     "karma": "^0.4.6",
     "chai": "^3.5.0",
-    "angular-route": "^1.5.5"
+    "angular-route": "^1.5.5",
+    "angular-slick": "^0.2.1"
   },
   "private": true,
   "resolutions": {

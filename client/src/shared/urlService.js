@@ -3,7 +3,8 @@ angular.module('app')
 
     var apibase = 'http://localhost:3001/api/';
 	var urls = {};
-    urls.getItem     = apibase + 'item/{{id}}';
+    urls.getItem = apibase + 'item/{{id}}';
+    urls.imageModal = '/catalog/mo_image.html';
     return urls;
 
 }]);

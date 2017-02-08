@@ -1,3 +1,3 @@
 'use strict'
 
-angular.module('app',['ngRoute','mgcrea.ngStrap','ngAnimate','retailsuave-ui'])
+angular.module('app',['ngRoute','ngAnimate','mgcrea.ngStrap'])
