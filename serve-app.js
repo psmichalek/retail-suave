@@ -16,7 +16,7 @@ api.on('api server close', function(code) {
 });
 
 // Start the dev server
-var dev = exec('node client/serve-dev.js');
+var dev = exec('node client/serve-src.js');
 
 dev.stdout.on('data', function(data) {
     console.log('dev server stdout: ' + data);
