@@ -121,10 +121,10 @@ $medfont:1.25em;
         display:inline-block;
         text-align:center;
         float:left;
-        @media screen and (max-width: 575px) {
+        @media screen and (max-width: 999px) {
             width:50px;
         }
-        @media screen and (min-width:  576px) {
+        @media screen and (min-width:  1000px) {
             width:75px;
         }
     }

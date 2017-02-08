@@ -1,3 +1,6 @@
+
+(function(angular){
+
 angular.module('app')
 .factory('Messages',['$sce',function($sce){
 
@@ -7,3 +10,5 @@ angular.module('app')
     return messages;
 
 }]);
+
+})(window.angular);
