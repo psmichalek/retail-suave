@@ -54,7 +54,7 @@
     "protractor": "^5.1.1",
     "run-sequence": "latest",
     "sinon": "^1.17.7",
-    "stream-series": "latest",
+    "stream-series": "^0.1.1",
     "supertest": "^3.0.0"
   },
   "dependencies": {
