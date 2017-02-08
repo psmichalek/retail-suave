@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node serve-app.js",
     "serve:api": "nodemon api/app.js",
-    "serve:dev": "npm run gulp:index && npm run gulp:sass && nodemon client/serve-dev.js",
+    "serve:dev": "npm run gulp:index && npm run gulp:sass && nodemon client/serve-src.js",
+    "serve:dist": "node client/serve-dist.js",
     "gulp:sass": "gulp --gulpfile client/gulpfile.js sass",
     "gulp:index": "gulp --gulpfile client/gulpfile.js index",
     "gulp:build": "gulp --gulpfile client/gulpfile.js build",

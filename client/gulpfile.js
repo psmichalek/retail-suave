@@ -1,6 +1,7 @@
 'use strict'
 
-const PKG         = (process.env.APP_BASE) ? require(process.env.APP_BASE+'/package.json') : null;
+const PKG_DIR     = __dirname.replace('/client','/');
+const PKG         = require(PKG_DIR+'/package.json');
 const APP_VERSION = (PKG!==null) ? parseInt(PKG.version) : 1;
 const jslibs      = require('./vendorSetup.js').jsScripts;
 const csslibs     = require('./vendorSetup.js').cssScripts;
@@ -67,7 +68,7 @@ const htmlmin     = require('gulp-htmlmin')
         .pipe( sass().on('error', sass.logError) )
         .pipe( debug() )
 
-        const cssLib = gulp.src( csslibs )
+        const cssLib = gulp.src( csslibs.map(function(path){return '.'+path}) )
         .pipe( concat('vendor.min.css') )
         .pipe( addstr.replace('../fonts', 'fonts') )
         .pipe( cleanCss() )
@@ -76,7 +77,7 @@ const htmlmin     = require('gulp-htmlmin')
 		.pipe( debug() )
 		.on('error',errorHandler)
 
-        const jsLib = gulp.src( jslibs.map(function(path){return '.'+path}))
+        const jsLib = gulp.src( jslibs.map(function(path){return '.'+path}) )
         .pipe( concat('vendor.min.js') )
         .pipe( uglify() )
 		.pipe( cachebust.resources() )
@@ -86,14 +87,15 @@ const htmlmin     = require('gulp-htmlmin')
 
         const jsMain = gulp.src(['./src/**/*.js','!./src/vendor/**/*'])
         .pipe( concat('main.js') )
+        .pipe( addstr.after('\'mgcrea.ngStrap\'', ',\'appViews\'') )
         //.pipe( uglify() )
 		.pipe( cachebust.resources() )
 		.pipe( gulp.dest( './dist/v'+APP_VERSION+'/' ) )
 		.pipe( debug() )
 		.on('error',errorHandler)
 
-        const jsViews = gulp.src('./src/**/*.html')
-        .pipe( tmplize( { moduleName: 'appViews', prefix:"views/" } ) )
+        const jsViews = gulp.src(['!./src/vendor/**/*','./src/catalog/*.html'])
+        .pipe( tmplize( { moduleName: 'appViews', prefix:"/catalog/" } ) )
         .pipe( concat( 'views.min.js' ) )
         .pipe( uglify() )
         .pipe( cachebust.resources() )
@@ -104,11 +106,12 @@ const htmlmin     = require('gulp-htmlmin')
         const injecttext = '\n<!-- Build Generated On: '+moment().format("MM/DD/YYYY hh:mm:ss A")+' --> \n'
 
       return gulp.src('./src/index.html')
-      .pipe( inject(series(cssLib,cssMain,jsLib,jsViews,jsMain)) )
+      .pipe( inject(series(cssMain,jsViews,jsMain),{name:'app',ignorePath:'/src'}) )
+      .pipe( inject(series(cssLib,jsLib),{name:'vendor',ignorePath:'/src'}) )
       .pipe( addstr.after('</title>', injecttext) )
-      .pipe( htmlmin({collapseWhitespace:true}) )
+      //.pipe( htmlmin({collapseWhitespace:true}) )
       .pipe( cachebust.references() )
-      .pipe(addstr.replace('/dist/v'+APP_VERSION+'/', ''))
+      .pipe( addstr.replace('/dist/v'+APP_VERSION+'/', ''))
       .pipe( gulp.dest('./dist/v'+APP_VERSION+'/') );
 
 
