@@ -20,6 +20,9 @@ $medfont:1.25em;
           border-radius: $radius;
 }
 
+.iblock{
+    display:inline-block;
+}
 .small{
     font-size:$smallfont;
 }
@@ -36,10 +39,12 @@ $medfont:1.25em;
 .qty{
     border:1px solid $colorLight;
     color:$colorDarker;
-    .act{ color:$colorMid; cursor:pointer; }
+    .act{ color:$colorMid; cursor:pointer; font-size:1.75em;}
 }
-.btn-pickup{
-
+.icon-wrapper{
+    display:inline-block;
+    text-align: center;
+    vertical-align: middle;
 }
 .btn-cart{
 
@@ -113,10 +118,15 @@ $medfont:1.25em;
         display:inline-block;
     }
     .tcol{
-        width:$thumbsize;
         display:inline-block;
         text-align:center;
         float:left;
+        @media screen and (max-width: 575px) {
+            width:50px;
+        }
+        @media screen and (min-width:  576px) {
+            width:75px;
+        }
     }
     .tcol img{
         width:100%;

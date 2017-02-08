@@ -1,3 +1,6 @@
+.iblock {
+  display: inline-block; }
+
 .small {
   font-size: 0.85em; }
 
@@ -16,7 +19,13 @@
   color: #333; }
   .qty .act {
     color: #ccc;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 1.75em; }
+
+.icon-wrapper {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle; }
 
 .ratings {
   width: 100%;
@@ -69,10 +78,15 @@
   .thumb-images .thumbs {
     display: inline-block; }
   .thumb-images .tcol {
-    width: 75px;
     display: inline-block;
     text-align: center;
     float: left; }
+    @media screen and (max-width: 575px) {
+      .thumb-images .tcol {
+        width: 50px; } }
+    @media screen and (min-width: 576px) {
+      .thumb-images .tcol {
+        width: 75px; } }
   .thumb-images .tcol img {
     width: 100%;
     height: auto; }

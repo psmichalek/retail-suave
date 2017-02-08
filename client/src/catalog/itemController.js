@@ -28,11 +28,13 @@ angular.module('app')
    /**********************
     * Public Functions
     **********************/
+
     $scope.addQty = function(){
         $scope.buyQuantity = $scope.buyQuantity + 1;
     }
     $scope.subQty = function(){
         $scope.buyQuantity = $scope.buyQuantity - 1;
+        if($scope.buyQuantity<0) $scope.buyQuantity = 0;
     }
     $scope.toggleMainImage = function(){
         $scope.showImage = false;
