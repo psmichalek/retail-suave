@@ -1,19 +1,19 @@
 'use strict'
 
-const PKG = __dirname.replace('/test/app','/');
-const APP = PKG + 'client/src';
+const PKG_DIR = __dirname.replace('/test/app','/');
+const APP_DIR = PKG_DIR + 'client/src';
 
 var files = [];
-require(PKG+'client/vendorSetup.js').jsScripts.map(function(v){ files.push(v.replace('/src',APP)) });
+require(PKG_DIR+'client/vendorSetup.js').jsScripts.map(function(v){ files.push(v.replace('/src',APP_DIR)) });
 files.push(
-    PKG+'client/src/vendor/angular-mocks/angular-mocks.js',
-    PKG+"client/src/app.js",
-    {pattern:PKG+'client/src/catalog/*.js',included:true},
-    {pattern:PKG+'client/src/shared/*.js',included:true},
-    {pattern:PKG+'test/app/*.test.js',included:true}
+    PKG_DIR+'client/src/vendor/angular-mocks/angular-mocks.js',
+    PKG_DIR+"client/src/app.js",
+    {pattern:PKG_DIR+'client/src/catalog/*.js',included:true},
+    {pattern:PKG_DIR+'client/src/shared/*.js',included:true},
+    {pattern:PKG_DIR+'test/app/*.test.js',included:true}
 );
 
-var ppkey = APP+'/**/*.js';
+var ppkey = APP_DIR+'/**/*.js';
 
 module.exports = function(config){
   config.set({
@@ -32,8 +32,8 @@ module.exports = function(config){
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     browsers: ['PhantomJS'],
-    singleRun: false
+    singleRun: true
   })
 }
