@@ -1,0 +1,146 @@
+$colorLightest:#fff;
+$colorLighter:#eee;
+$colorLight:#ddd;
+$colorMid:#ccc;
+$colorDarkest:#222;
+$colorDarker:#333;
+$colorDark:#444;
+$thumbsize:75px;
+$smallfont:0.85em;
+$medfont:1.25em;
+
+@mixin border($color){
+    border:1px solid $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.iblock{
+    display:inline-block;
+}
+.small{
+    font-size:$smallfont;
+}
+.bordered{
+    border-top:2px dotted $colorLight;
+    border-bottom:2px dotted $colorLight;
+}
+.border-right{
+    border-right:1px solid $colorLight;
+}
+.promo{
+    color:red;
+}
+.qty{
+    border:1px solid $colorLight;
+    color:$colorDarker;
+    .act{ color:$colorMid; cursor:pointer; font-size:1.75em;}
+}
+.icon-wrapper{
+    display:inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.btn-cart{
+
+}
+.ratings{
+
+    width:100%;
+    color:$colorDark;
+
+    .title{
+        font-weight:bold;
+        font-size:$medfont;
+    }
+    .desc{
+        font-size:$smallfont;
+        line-height:1.25;
+    }
+
+}
+.reviews{
+
+    background-color:$colorLighter;
+
+    .bottom-border{
+        padding-bottom:15px;
+        border-bottom:2px dotted $colorLight;
+    }
+}
+.stars{
+
+    font-size:$medfont;
+    display:inline-block;
+    .on{ color:red; }
+    .off{ color:$colorMid; }
+
+}
+.main-image{
+
+    width:100%;
+
+    img{
+        width:80%;
+        height: auto;
+    }
+
+}
+.view-large{
+
+    height:$thumbsize;
+    width:100%;
+    cursor:pointer;
+    color:$colorDark;
+    position: relative;
+
+    .txt{
+        position: absolute;
+        top:65%;
+        left:45%;
+        transform: translate(-45%,-65%);
+    }
+}
+.thumb-images{
+
+    height:$thumbsize;
+    width:100%;
+    cursor:pointer;
+    color:$colorDark;
+    text-align: center;
+
+    .thumbs{
+        display:inline-block;
+    }
+    .tcol{
+        display:inline-block;
+        text-align:center;
+        float:left;
+        @media screen and (max-width: 575px) {
+            width:50px;
+        }
+        @media screen and (min-width:  576px) {
+            width:75px;
+        }
+    }
+    .tcol img{
+        width:100%;
+        height: auto;
+    }
+    .tmid{
+        padding:3px;
+        @include border($colorLight);
+    }
+    .tchev{
+        padding-top:1.75em;
+    }
+    .tchev i{
+        font-size:$medfont;
+        color:($colorLight);
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "retail-suave",
+  "version": "1.0.0",
+  "description": "Demo app",
+  "scripts": {
+    "start": "",
+    "serve:api": "nodemon api/app.js",
+    "serve:dev": "npm run gulp:index && npm run gulp:sass && nodemon client/serve-dev.js",
+    "gulp:sass": "gulp --gulpfile client/gulpfile.js sass",
+    "gulp:index": "gulp --gulpfile client/gulpfile.js index",
+    "test": "mocha --report spec test/**/*.test.js",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Paul Samuel Michalek <psmichalek@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-cachebust": "latest",
+    "gulp-clean": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-debug": "latest",
+    "gulp-html-replace": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-inject": "latest",
+    "gulp-inject-string": "latest",
+    "gulp-ng-html2js": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "latest",
+    "jsdom": "^9.9.1",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "run-sequence": "latest",
+    "stream-series": "latest",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.22",
+    "path": "^0.12.7",
+    "shortid": "^2.2.6"
+  }
+}
