@@ -1,4 +1,6 @@
 
+(function(angular){
+
 angular.module('app')
 .controller('itemController',
   ['$scope','$timeout','$modal','Item','Messages','Logger','Urls',
@@ -12,6 +14,8 @@ angular.module('app')
      **********************/
 
     function _initView(){
+
+        $scope.viewingItemId    = 1;
         $scope.alert            = {active:false, mesg:'', timeout:5000};
       	$scope.item             = {};
         $scope.viewLoading      = true;
@@ -28,7 +32,9 @@ angular.module('app')
    /**********************
     * Public Functions
     **********************/
-
+    $scope.reload = function(){
+        _load();
+    }
     $scope.addQty = function(){
         $scope.buyQuantity = $scope.buyQuantity + 1;
     }
@@ -69,3 +75,5 @@ angular.module('app')
     }
 
 }]);
+
+})(window.angular);

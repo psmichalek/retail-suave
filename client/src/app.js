@@ -1,3 +1,6 @@
-'use strict'
 
-angular.module('app',['ngRoute','ngAnimate','mgcrea.ngStrap'])
+(function(angular){
+
+    angular.module('app',['ngRoute','ngAnimate','mgcrea.ngStrap'])
+
+})(window.angular);

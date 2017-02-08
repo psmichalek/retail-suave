@@ -1,4 +1,6 @@
 
+(function(angular){
+
   angular.module('app')
   .factory('Item', ['$http','$sce','Urls','Messages','Logger',
     function ($http,$sce,Urls,Messages,Logger) {
@@ -9,7 +11,8 @@
 
             function _success(resp){
               Logger.out('get successful ',resp,caller);
-              if(resp.status==200) {
+              if(resp.status==200 && typeof resp.data.CatalogEntryView!=='undefined') {
+
                   scope.item = resp.data.CatalogEntryView[0];
 
                   // Set item
@@ -71,11 +74,11 @@
                 Logger.out('get failed ',resp,caller);
                 scope.viewLoading=false;
                 scope.alert.active=true;
-                scope.alert.mesg=Messages.generalError + Messages.getItemsFailed + $sce.trustAsHtml(resp.data);
+                scope.alert.mesg=Messages.generalError + Messages.getItemsFailed;
                 scope.alert.type='error';
             }
 
-            $http.get( Urls.getItem.replace("{{id}}",1) ).then( _success, _failure );
+            $http.get( Urls.getItem + scope.viewingItemId ).then( _success, _failure );
         }
 
         /**************************
@@ -86,3 +89,5 @@
 
         return service;
   }]);
+
+})(window.angular);

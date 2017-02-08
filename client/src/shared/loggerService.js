@@ -1,3 +1,5 @@
+(function(angular){
+
 angular.module('app')
 .factory('Logger',['$log',
 function($log){
@@ -22,3 +24,5 @@ function($log){
 	return service;
 
 }]);
+
+})(window.angular);

@@ -1,0 +1,13 @@
+[
+  {
+    "description": "should not show the pickup in store button ",
+    "assertions": [
+      {
+        "passed": false,
+        "errorMsg": "pickup is not defined",
+        "stackTrace": "ReferenceError: pickup is not defined\n    at Context.<anonymous> (test/e2e/catalog.test.js:11:31)\n    at /Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:144:19\n    at new ManagedPromise (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1082:7)\n    at controlFlowExecute (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:129:14)\n    at TaskQueue.execute_ (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2913:14)\n    at TaskQueue.executeNext_ (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2896:21)\n    at asyncRun (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2820:25)\n    at /Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7\nFrom: Task: Item details page should not show the pickup in store button \n    at Context.ret (/Users/paul.michalek/.npm-packages/lib/node_modules/protractor/node_modules/selenium-webdriver/testing/index.js:128:10)"
+      }
+    ],
+    "duration": 7
+  }
+]

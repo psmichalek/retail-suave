@@ -1,3 +1,4 @@
+(function(angular){
 
 angular.module('app')
 .factory('errorService',function ($sce) {
@@ -14,3 +15,5 @@ angular.module('app')
 
 	return service;
 });
+
+})(window.angular);
